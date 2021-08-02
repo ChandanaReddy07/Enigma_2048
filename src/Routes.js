@@ -18,7 +18,7 @@ const Routes=()=>{
           });
     },[]) 
     return(
-        <BrowserRouter>
+        <HashRouter>
         
          <Switch>
             <Route path="/Enigma_2048" exact component={Start}/>
@@ -27,7 +27,7 @@ const Routes=()=>{
 
         </Switch>
       
-        </BrowserRouter>
+        </HashRouter>
     );
 }
 export default Routes;
