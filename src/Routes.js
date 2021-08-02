@@ -20,7 +20,7 @@ const Routes=()=>{
     return(
         <BrowserRouter>
         <Switch>
-            <Route path="/" exact component={Start}/>
+            <Route path="/Enigma_2048" exact component={Start}/>
             <Route path="/game" exact component={Game}/>
             <Route path="/about" exact component={Stars}/>
 
