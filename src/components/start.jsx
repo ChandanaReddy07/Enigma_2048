@@ -8,7 +8,7 @@ const Start = () => {
         <div className="shape">
           <div className="title">
             <h2>WITH ❤ BY ENIGMA TEAM</h2>
-            <div style={{display:"flex"}}>
+            <div style={{display:"flex" }}>
             <Link to="/about" className="button">
               {" "}
               INSTRUCTIONS
