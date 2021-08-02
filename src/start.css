@@ -41,7 +41,7 @@ body {
   cursor: pointer;
   display: block;
   position: relative;
-  width: 100px;
+  min-width: 200px;
   z-index: 100;
   text-transform: uppercase;
   transition: ease-in 0.3s;

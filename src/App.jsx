@@ -49,10 +49,10 @@ function App() {
       
       <ThemeProvider theme={mode}>
         <CssBaseline />
-
+{/* 
         <Demo darkmode={darkmode} setDarkmode={setDarkmode} />
         {/* <PopUp/> */}
-        <Contact/>
+        {/* <Contact/> */} 
         
       </ThemeProvider>
     </div>

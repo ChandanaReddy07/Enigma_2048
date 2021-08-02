@@ -8,11 +8,17 @@ const Start = () => {
         <div className="shape">
           <div className="title">
             <h2>WITH ❤ BY ENIGMA TEAM</h2>
-
-            <Link to="/app" className="button">
+            <div style={{display:"flex"}}>
+            <Link to="/about" className="button">
+              {" "}
+              INSTRUCTIONS
+            </Link>
+            <Link to="/game" className="button">
               {" "}
               START
             </Link>
+            </div>
+           
           </div>
         </div>
       </div>

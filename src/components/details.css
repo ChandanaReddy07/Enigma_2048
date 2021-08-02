@@ -1,0 +1,20 @@
+.card{
+    display: inline-flex;
+    border-radius: 1px;
+    height: 400px;
+    align-items: center;
+    max-width: 700px;
+    background-color: linear-gradient(to top right, #51E1ED 0%, #03203C 100%);
+}
+img{
+    width: 300px;
+    height: 300px;
+    border-radius: 1px;
+    background-color: transparent;
+}
+.desc{
+    margin: 10px;
+    color: white;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
