@@ -18,7 +18,7 @@ const Routes=()=>{
           });
     },[]) 
     return(
-        <HashRouter>
+        <HashRouter basename='/'>
         
          <Switch>
             <Route path="/Enigma_2048" exact component={Start}/>
