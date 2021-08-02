@@ -2,9 +2,12 @@ import React, { useState, useEffect } from "react";
 import cloneDeep from "lodash.clonedeep";
 import { useEvent, getColors } from "../util";
 import Swipe from "react-easy-swipe";
+import Toggle from "./Toggle";
+import useDarkMode from "./use-dark-mode";
+import "./toggle_styles.scss";
 import "./game.css";
-// import Score from "./components/score";
-
+import Sound from "./click_sound.mp3"
+import {Link} from "react-router-dom"
 function Game() {
   const UP_ARROW = 38;
   const DOWN_ARROW = 40;
@@ -17,10 +20,10 @@ function Game() {
     [0, 0, 0, 0]
   ]);
   let [score, setScore] = useState(() => {
-    return(localStorage.getItem("score") || 0);
+    return localStorage.getItem("score") || 0;
   });
   let [best, setBest] = useState(() => {
-    return (localStorage.getItem("best") || 0);
+    return localStorage.getItem("best") || 0;
   });
 
   const [gameOver, setGameOver] = useState(false);
@@ -48,6 +51,7 @@ function Game() {
     addNumber(newGrid);
     // console.table(newGrid);
     addNumber(newGrid);
+
     // console.table(newGrid);
   };
 
@@ -124,7 +128,7 @@ function Game() {
     if (dummy) {
       return newArray;
     }
-    setScore((score = +score +  count));
+    setScore((score = +score + count));
     localStorage.setItem("score", score);
     localStorage.setItem("grid", JSON.stringify(newArray));
     setData(newArray);
@@ -178,7 +182,7 @@ function Game() {
     if (dummy) {
       return newArray;
     }
-    setScore((score = +score +  count));
+    setScore((score = +score + count));
     localStorage.setItem("score", score);
     localStorage.setItem("grid", JSON.stringify(newArray));
     setData(newArray);
@@ -229,7 +233,7 @@ function Game() {
       addNumber(b);
     }
     if (dummy) return b;
-    setScore((score = +score +  count));
+    setScore((score = +score + count));
     localStorage.setItem("score", score);
     localStorage.setItem("grid", JSON.stringify(b));
     setData(b);
@@ -281,7 +285,7 @@ function Game() {
     if (dummy) {
       return b;
     }
-    setScore((score = +score +  count));
+    setScore((score = +score + count));
     localStorage.setItem("score", score);
     localStorage.setItem("grid", JSON.stringify(b));
     setData(b);
@@ -345,34 +349,39 @@ function Game() {
     if (gameOver) {
       return;
     }
-    console.log(event.keyCode);
+    let sound = new Audio(Sound)
+    // console.log(event.keyCode);
     switch (event.keyCode) {
       case UP_ARROW:
         // alert("up");
-        console.log(event.keyCode, "up");
+        // console.log(event.keyCode, "up");
         swipeUp();
+        sound.play();
         // console.table(data);
         break;
       case DOWN_ARROW:
         // console.table(data);
-        console.log(event.keyCode, "down");
+        // console.log(event.keyCode, "down");
         swipeDown();
+        sound.play();
         // console.table(data);
         break;
       case LEFT_ARROW:
-        console.log(event.keyCode, "left");
+        // console.log(event.keyCode, "left");
         // console.table(data);
         swipeLeft();
+        sound.play();
         // console.table(data);
         break;
       case RIGHT_ARROW:
-        console.log(event.keyCode, "right");
+        // console.log(event.keyCode, "right");
         // console.table(data);
         swipeRight();
+        sound.play();
         // console.table(data);
         break;
       default:
-        console.log("def");
+        // console.log("def");
         break;
     }
 
@@ -388,134 +397,150 @@ function Game() {
 
   useEffect(() => {
     let s = JSON.parse(localStorage.getItem("grid"));
-    console.log(s);
+    // console.log(s);
     if (!s) {
-      console.log("init");
+      // console.log("init");
       initialize();
     } else {
-      console.log("func", s);
+      // console.log("func", s);
       setData(func());
     }
     // eslint-disable-next-line
   }, []);
+
+  const [darkMode, setDarkMode] = useDarkMode();
 
   // This is a custom function
   useEvent("keydown", handleKeyDown);
 
   return (
     <div className="Game">
-      <div
-        style={{
-          width: 345,
-          margin: "auto",
-          marginTop: 30
-        }}
-      >
-        <div style={{ display: "flex" }}>
-          <div
-            style={{
-              fontFamily: "sans-serif",
-              flex: 1,
-              fontWeight: "700",
-              fontSize: 60,
-              color: "#776e65"
-            }}
-          >
-            2048
-          </div>
-          <div
-            className="score-container"
-            style={{
-              marginLeft: "100px"
-            }}
-          >
-            {score}
-          </div>
-          <div
-            className="best-container"
-            style={{
-              marginLeft: "20px"
-            }}
-          >
-            {best}
-          </div>
-          <div
-            style={{
-              flex: 1,
-              marginTop: "auto"
-            }}
-          ></div>
-        </div>
+      <div className="navbar" style={{marginTop:"80px"}}>
+        <Toggle darkMode={darkMode} setDarkMode={setDarkMode} />
+      </div>
+      <div>
         <div
           style={{
-            background: "#AD9D8F",
-            width: "max-content",
-            height: "max-content",
+            width: 345,
             margin: "auto",
-            padding: 5,
-            borderRadius: 5,
-            marginTop: 10,
-            position: "relative"
+            marginTop: 30
           }}
         >
-          {gameOver && (
-            <div style={style.gameOverOverlay}>
-              <div>
-                <div
-                  style={{
-                    fontSize: 30,
-                    fontFamily: "sans-serif",
-                    fontWeight: "900",
-                    color: "#776E65"
-                  }}
-                >
-                  Game Over
-                </div>
+          <div style={{ display: "flex" }}>
+            <div
+              style={{
+                fontFamily: "sans-serif",
+                flex: 1,
+                fontWeight: "700",
+                fontSize: 60,
+                color: "#776e65"
+              }}
+            >
+              2048
+            </div>
+            <div
+              className="score-container"
+              style={{
+                marginLeft: "100px"
+              }}
+            >
+              {score}
+            </div>
+            <div
+              className="best-container"
+              style={{
+                marginLeft: "20px"
+              }}
+            >
+              {best}
+            </div>
+            <div
+              style={{
+                flex: 1,
+                marginTop: "auto"
+              }}
+            ></div>
+          </div>
+          <div
+            style={{
+              background: "#AD9D8F",
+              width: "max-content",
+              height: "max-content",
+              margin: "auto",
+              padding: 5,
+              borderRadius: 5,
+              marginTop: 10,
+              position: "relative"
+            }}
+          >
+            {gameOver && (
+              <div style={style.gameOverOverlay}>
                 <div>
                   <div
                     style={{
-                      flex: 1,
-                      marginTop: "auto"
+                      fontSize: 30,
+                      fontFamily: "sans-serif",
+                      fontWeight: "900",
+                      color: "#776E65"
                     }}
                   >
-                    <div onClick={resetGame} style={style.tryAgainButton}>
-                      Try Again
+                    Game Over
+                  </div>
+                  <div>
+                    <div
+                      style={{
+                        flex: 1,
+                        marginTop: "auto"
+                      }}
+                    >
+                      <div onClick={resetGame} style={style.tryAgainButton}>
+                        Try Again
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          )}
-          <Swipe
-            // onSwipeDown={() => {
-            //   swipeDown();
-            // }}
-            // onSwipeLeft={() => swipeLeft()}
-            // onSwipeRight={() => swipeRight()}
-            // onSwipeUp={() => swipeUp()}
-            style={{ overflowY: "hidden" }}
-          >
-            {data.map((row, oneIndex) => {
-              return (
-                <div style={{ display: "flex" }} key={oneIndex}>
-                  {row.map((digit, index) => (
-                    <Block num={digit} key={index} />
-                  ))}
-                </div>
-              );
-            })}
-          </Swipe>
-        </div>
+            )}
+            <Swipe
+              // onSwipeDown={() => {
+              //   swipeDown();
+              // }}
+              // onSwipeLeft={() => swipeLeft()}
+              // onSwipeRight={() => swipeRight()}
+              // onSwipeUp={() => swipeUp()}
+              style={{ overflowY: "hidden" }}
+            >
+              {data.map((row, oneIndex) => {
+                return (
+                  <div style={{ display: "flex" }} key={oneIndex}>
+                    {row.map((digit, index) => (
+                      <Block num={digit} key={index} />
+                    ))}
+                  </div>
+                );
+              })}
+            </Swipe>
+          </div>
 
-        <div style={{ width: "inherit" }}>
-          <p className="game-explanation">
-            <strong className="important">How to play:</strong> Use your{" "}
-            <strong>arrow keys</strong> to move the tiles. When two tiles with
-            the same number touch, they <strong>merge into one!</strong>
-          </p>
-        </div>
-        <div onClick={resetGame} style={style.newGameButton}>
-          NEW GAME
+          <div style={{ width: "inherit" }}>
+            <p className="game-explanation">
+              Use your <strong>arrow keys</strong> to move the tiles. When two
+              tiles with the same number touch, they{" "}
+              <strong>merge into one!</strong>
+            </p>
+          </div>
+          <div className="Button__manager">
+            <div  style={style.InstructionsButton}>
+              <Link to="/about" style={{textDecoration:"none",color:"white"}}>
+              INSTRUCTIONS
+              </Link>
+
+            
+            </div>
+            <div onClick={resetGame} style={style.newGameButton}>
+              NEW GAME
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -551,16 +576,28 @@ const style = {
     fontWeight: "800",
     color: "white"
   },
+  InstructionsButton: {
+    padding: 10,
+    display: "inline-block",
+    background: "#846F5B",
+    color: "#F8F5F0",
+    width: 120,
+    borderRadius: 7,
+    fontWeight: "900",
+    cursor: "pointer",
+    textAlign: "center",
+    marginRight: 20
+  },
   newGameButton: {
     padding: 10,
     background: "#846F5B",
+    display: "inline-block",
     color: "#F8F5F0",
     width: 95,
     borderRadius: 7,
     fontWeight: "900",
     cursor: "pointer",
-    textAlign: "center",
-    margin: "auto"
+    textAlign: "center"
   },
   tryAgainButton: {
     padding: 10,

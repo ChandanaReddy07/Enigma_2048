@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import {BrowserRouter , Switch, Route} from "react-router-dom"
+import {BrowserRouter , Switch, Route,HashRouter} from "react-router-dom"
 import Start from "../src/components/start"
 import App from "../src/App"
 import Game from './components/Game';
@@ -19,14 +19,14 @@ const Routes=()=>{
     },[]) 
     return(
         <BrowserRouter>
-        <Switch>
+        
+         <Switch>
             <Route path="/Enigma_2048" exact component={Start}/>
-            <Route path="/game"  component={Game}/>
-            <Route path="/about"  component={Stars}/>
+            <Route path="/game" exact component={Game}/>
+            <Route path="/about" exact component={Stars}/>
 
-           
-          
         </Switch>
+      
         </BrowserRouter>
     );
 }

@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import React from "react";
-import Details from "./Details";
-import PopUp from "./PopUp";
+
 import "./stars.css";
 
 const data = [
