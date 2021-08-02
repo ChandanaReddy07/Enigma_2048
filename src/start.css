@@ -45,7 +45,7 @@ body {
   z-index: 100;
   text-transform: uppercase;
   transition: ease-in 0.3s;
-  box-shadow: 0 0 20px rgba(192, 202, 246, 0.9), -5px -5px 0 rgba(194, 183, 254, 0.5), 5px 5px 0 rgba(149, 169, 255, 0.6);
+  box-shadow: 0 0 20px rgba(192, 202, 246, 0.9), 5px 5px 0 rgba(149, 169, 255, 0.6);
 }
 .container .button:hover {
   background-color: #fff;
