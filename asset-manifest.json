@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Enigma_2048/static/css/main.6d55445f.chunk.css",
+    "main.js": "/Enigma_2048/static/js/main.ed17036f.chunk.js",
+    "main.js.map": "/Enigma_2048/static/js/main.ed17036f.chunk.js.map",
+    "runtime-main.js": "/Enigma_2048/static/js/runtime-main.f1c1b287.js",
+    "runtime-main.js.map": "/Enigma_2048/static/js/runtime-main.f1c1b287.js.map",
+    "static/css/2.ae9e5f60.chunk.css": "/Enigma_2048/static/css/2.ae9e5f60.chunk.css",
+    "static/js/2.161b60aa.chunk.js": "/Enigma_2048/static/js/2.161b60aa.chunk.js",
+    "static/js/2.161b60aa.chunk.js.map": "/Enigma_2048/static/js/2.161b60aa.chunk.js.map",
+    "index.html": "/Enigma_2048/index.html",
+    "static/css/2.ae9e5f60.chunk.css.map": "/Enigma_2048/static/css/2.ae9e5f60.chunk.css.map",
+    "static/css/main.6d55445f.chunk.css.map": "/Enigma_2048/static/css/main.6d55445f.chunk.css.map",
+    "static/js/2.161b60aa.chunk.js.LICENSE.txt": "/Enigma_2048/static/js/2.161b60aa.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f1c1b287.js",
+    "static/css/2.ae9e5f60.chunk.css",
+    "static/js/2.161b60aa.chunk.js",
+    "static/css/main.6d55445f.chunk.css",
+    "static/js/main.ed17036f.chunk.js"
+  ]
+}
