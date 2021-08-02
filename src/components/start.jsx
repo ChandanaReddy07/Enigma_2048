@@ -9,11 +9,11 @@ const Start = () => {
           <div className="title">
             <h2>WITH ❤ BY ENIGMA TEAM</h2>
             <div style={{display:"flex"}}>
-            <Link to="/about" className="button">
+            <Link to="/Enigma_2048/about" className="button">
               {" "}
               INSTRUCTIONS
             </Link>
-            <Link to="/game" className="button">
+            <Link to="/Enigma_2048/game" className="button">
               {" "}
               START
             </Link>
