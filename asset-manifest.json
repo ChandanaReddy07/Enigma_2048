@@ -1,24 +1,24 @@
 {
   "files": {
     "main.css": "/Enigma_2048/static/css/main.e520aa23.chunk.css",
-    "main.js": "/Enigma_2048/static/js/main.1959596a.chunk.js",
-    "main.js.map": "/Enigma_2048/static/js/main.1959596a.chunk.js.map",
+    "main.js": "/Enigma_2048/static/js/main.aef3ee00.chunk.js",
+    "main.js.map": "/Enigma_2048/static/js/main.aef3ee00.chunk.js.map",
     "runtime-main.js": "/Enigma_2048/static/js/runtime-main.f1c1b287.js",
     "runtime-main.js.map": "/Enigma_2048/static/js/runtime-main.f1c1b287.js.map",
     "static/css/2.ae9e5f60.chunk.css": "/Enigma_2048/static/css/2.ae9e5f60.chunk.css",
-    "static/js/2.6950199b.chunk.js": "/Enigma_2048/static/js/2.6950199b.chunk.js",
-    "static/js/2.6950199b.chunk.js.map": "/Enigma_2048/static/js/2.6950199b.chunk.js.map",
+    "static/js/2.8cac83fb.chunk.js": "/Enigma_2048/static/js/2.8cac83fb.chunk.js",
+    "static/js/2.8cac83fb.chunk.js.map": "/Enigma_2048/static/js/2.8cac83fb.chunk.js.map",
     "index.html": "/Enigma_2048/index.html",
     "static/css/2.ae9e5f60.chunk.css.map": "/Enigma_2048/static/css/2.ae9e5f60.chunk.css.map",
     "static/css/main.e520aa23.chunk.css.map": "/Enigma_2048/static/css/main.e520aa23.chunk.css.map",
-    "static/js/2.6950199b.chunk.js.LICENSE.txt": "/Enigma_2048/static/js/2.6950199b.chunk.js.LICENSE.txt",
+    "static/js/2.8cac83fb.chunk.js.LICENSE.txt": "/Enigma_2048/static/js/2.8cac83fb.chunk.js.LICENSE.txt",
     "static/media/click_sound.c8776b00.mp3": "/Enigma_2048/static/media/click_sound.c8776b00.mp3"
   },
   "entrypoints": [
     "static/js/runtime-main.f1c1b287.js",
     "static/css/2.ae9e5f60.chunk.css",
-    "static/js/2.6950199b.chunk.js",
+    "static/js/2.8cac83fb.chunk.js",
     "static/css/main.e520aa23.chunk.css",
-    "static/js/main.1959596a.chunk.js"
+    "static/js/main.aef3ee00.chunk.js"
   ]
 }
