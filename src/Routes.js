@@ -18,14 +18,14 @@ const Routes=()=>{
           });
     },[]) 
     return(
-        <HashRouter basename='/'>
+        <HashRouter>
         
-         <Switch>
-            <Route path="/Enigma_2048" exact component={Start}/>
+       
+            <Route path="/" exact component={Start}/>
             <Route path="/game" exact component={Game}/>
             <Route path="/about" exact component={Stars}/>
 
-        </Switch>
+       
       
         </HashRouter>
     );
