@@ -21,8 +21,8 @@ const Routes=()=>{
         <BrowserRouter>
         <Switch>
             <Route path="/Enigma_2048" exact component={Start}/>
-            <Route path="/game" exact component={Game}/>
-            <Route path="/about" exact component={Stars}/>
+            <Route path="/Enigma_2048/game" exact component={Game}/>
+            <Route path="/Enigma_2048/about" exact component={Stars}/>
 
            
           
